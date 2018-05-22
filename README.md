@@ -1,44 +1,55 @@
 # Zeal
 
-[![Build Status](https://api.shippable.com/projects/54ac2ce4d46935d5fbc19b84/badge?branchName=master)](https://app.shippable.com/projects/54ac2ce4d46935d5fbc19b84/builds/latest) [![IRC](https://img.shields.io/badge/irc-%23zealdocs-blue.svg?style=flat-square)](https://kiwiirc.com/client/irc.freenode.net/#zealdocs)
+[![Changelog](https://img.shields.io/github/release/zealdocs/zeal.svg?style=flat-square)](https://github.com/zealdocs/zeal/releases)
+[![Gitter](https://img.shields.io/gitter/room/zealdocs/zeal.svg?style=flat-square)](https://gitter.im/zealdocs/zeal)
+[![IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg?style=flat-square)](https://kiwiirc.com/client/irc.freenode.net/#zealdocs)
+[![Telegram Channel](https://img.shields.io/badge/follow-on%20telegram-179cde.svg?style=flat-square)](https://telegram.me/zealdocs)
+[![Twitter](https://img.shields.io/badge/follow-on%20twitter-1da1f2.svg?style=flat-square)](https://twitter.com/zealdocs)
 
-**zeal**
-*noun*
+Zeal is a simple offline documentation browser inspired by [Dash](https://kapeli.com/dash).
 
- 1. a feeling of strong eagerness (usually in favor of a person or cause)
- 2. excessive fervor to do something or accomplish some end
- 3. prompt willingness
+![Screenshot](https://i.imgur.com/qBkZduS.png)
 
-(from WordNet 3.0)
+## Build Status
 
-Zeal is a simple offline documentation browser inspired by [Dash](http://kapeli.com/dash/).
+[![Coverity Scan](https://img.shields.io/coverity/scan/4271.svg?style=flat-square)](https://scan.coverity.com/projects/4271)
 
-![Screenshot](http://i.imgur.com/SiLvpz8.png)
-
-[More screenshots](http://imgur.com/a/eVi97)
+| OS       | Build Status |
+| -------- | ------------ |
+| Linux    | [![Shippable](https://img.shields.io/shippable/54ac2ce4d46935d5fbc19b84/master.svg?style=flat-square)](https://app.shippable.com/projects/54ac2ce4d46935d5fbc19b84) |
+| Windows  | [![AppVeyor](https://img.shields.io/appveyor/ci/trollixx/zeal/master.svg?style=flat-square)](https://ci.appveyor.com/project/trollixx/zeal) |
 
 ## Download
 
-For details about binary packages (currently available for Windows and Ubuntu) see [downloads page](http://zealdocs.org/download.html). Also, the latest unstable builds are available [here]( https://bitbucket.org/zealdocs/zeal-win32-binary-downloads/downloads).
+Get binary builds for Windows and Linux from the [download page](https://zealdocs.org/download.html).
 
 ## How to use
 
-After installing Zeal, you need to download docsets. Go to *File->Options->Docsets*, select the ones you want, and click the *Download* button.
+After installing Zeal, go to *Tools->Docsets*, select the ones you want, and click the *Download* button.
 
 ## How to compile
 
-If you prefer to compile Zeal manually.
+### Required dependencies
 
-### Requirements
-* [Qt](https://www.qt.io/) (version 5.2.0 or above is required)
-* [libarchive](http://libarchive.org/)
-* Optionally [libappindicator](https://launchpad.net/libappindicator) for Unity users
+* [CMake](https://cmake.org/).
+* [Qt](https://www.qt.io/) version 5.5.1 or above. Required module: Qt WebKit Widgets.
+* [libarchive](http://libarchive.org/).
+* [SQLite](https://sqlite.org/).
+* X11 platforms only: Qt X11 Extras and `xcb-util-keysyms`.
 
-To compile it, run `qmake` and `make`. On Linux, a final `make install` is required to install icons.
+### Building instructions
+
+```sh
+mkdir build && cd build
+cmake ..
+make
+```
+
+More detailed instructions are available in the [Wiki](https://github.com/zealdocs/zeal/wiki).
 
 ## Query & Filter docsets
 
-You can limit the search scope by using ':' to indicate the desired docsets.
+You can limit the search scope by using ':' to indicate the desired docsets:
 
 `java:BaseDAO`
 
@@ -48,10 +59,23 @@ You can also search multiple docsets separating them with a comma:
 
 ## Command line
 
-If you prefer, you can start with Zeal queries from command line, for this, use the option `--query`:
+If you prefer, you can start Zeal with a query from the command line:
 
-`zeal --query python:bomb`
+`zeal python:pprint`
 
 ## Creating your own docsets
 
-You can use [Dash's instructions for generating docsets](http://kapeli.com/docsets).
+Follow the [Dash Docset Generation Guide](https://kapeli.com/docsets).
+
+## Contact and Support
+
+We want your feedback! Here's a list of different ways to contact developers and request help:
+* Report bugs and submit feature requests to [GitHub issues](https://github.com/zealdocs/zeal/issues).
+* Reach developers and other Zeal users on [Gitter](https://gitter.im/zealdocs/zeal), or IRC channel #zealdocs on [Freenode](https://freenode.net/).
+* Ask any questions in our [Google Group](https://groups.google.com/d/forum/zealdocs). You can simply send an email to zealdocs@googlegroups.com.
+* Finally, for private communications email us at zeal@zealdocs.org.
+* And do not forget to follow [@zealdocs](https://twitter.com/zealdocs) on Twitter!
+
+## License
+
+This software is licensed under the terms of the GNU General Public License version 3 (GPLv3). Full text of the license is available in the [COPYING](https://github.com/zealdocs/zeal/blob/master/COPYING) file and [online](http://opensource.org/licenses/gpl-3.0.html).
